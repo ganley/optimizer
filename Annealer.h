@@ -127,7 +127,7 @@ Annealer<MoveType, CostType, MoveMgrType>::measureTemp()
         const double temp = (hiTemp + loTemp) / 2.0;
         int accepted = 0;
         for (int attempts = 0; attempts < movesPerTemp; ++attempts) {
-            TSPMove move;
+            MoveType move;
             _moveMgr->generateMove(&move);
             const CostType  deltaCost       = _moveMgr->proposeMove(&move);
             const CostType  absDeltaCost    = abs(deltaCost);
